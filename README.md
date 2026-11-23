@@ -1,58 +1,61 @@
-# Accessible Visitor Toolkit
+# Able — Web Accessibility for Everyone
 
-A free, open-source, Arabic/English accessibility widget with visual preferences, browser-based Read Aloud, caption/transcript support, and floating-button or fixed-sidebar installation.
+**Able** is a free, MIT-licensed Arabic/English website accessibility widget. It provides visual preferences, browser-based Read Aloud, caption and transcript integrations, and a floating button or fixed sidebar.
 
-**This is not a WCAG 2.2 AA certification.** Websites must be independently audited.
+![Able logo icon](./assets/able-icon.webp)
 
-## Website and live demo
+**Important:** Able is *not* an automatic WCAG 2.2 AA compliance solution. Websites must be evaluated and remediated separately.
 
-The redesigned bilingual landing page lives at [index.html](./index.html). The actual widget is [accessibility-widget.js](./accessibility-widget.js).
+## Website and demo
 
-**To publish the site on GitHub Pages:**
+- **Website:** [index.html](./index.html)
+- **Widget:** [accessibility-widget.js](./accessibility-widget.js)
+- **Approved icon:** [assets/able-icon.webp](./assets/able-icon.webp)
+- **Demo caption files:** `sample-ar.vtt`, `sample-en.vtt`
 
-1. Go to repository **Settings → Pages**.
-2. Select **Deploy from a branch**.
-3. Select branch **main**, folder **/(root)**, then **Save**.
-4. Verify the deployment under **Actions** / **Pages**.
+To publish the site, enable **Settings → Pages → Deploy from a branch → main → /(root)**.
 
-Expected address after successful deployment: https://bahymohammmed.github.io/Accessibility-Widget/
+GitHub Pages URL (once deployed): https://bahymohammmed.github.io/Accessibility-Widget/
 
-## Installation
+## Install
 
-Host the JavaScript file on your own domain, then add:
+Host the widget JavaScript on your website, then add:
 
 ```html
 <script src="/accessibility-widget.js" defer></script>
 ```
 
-Fixed sidebar:
+Fixed sidebar on the right (use `left` for left placement):
 
 ```html
 <script src="/accessibility-widget.js" data-avt-mode="sidebar" data-avt-side="right" defer></script>
 ```
 
-Change `right` to `left` if needed.
+The configuration prefix `data-avt-` and existing `window.AccessibleVisitorToolkit` API are preserved for backward compatibility. New integrations may use `window.AbleWidget` as an alias.
 
-## Included
+## Included features
 
-- Arabic and English, right-to-left interface
-- Text resizing, high-contrast and grayscale controls
-- Text spacing, link highlighting, reading guide
-- Read page and selected text using browser voices
-- Caption preferences and transcript integration
-- Visual alert and live-caption integration hooks
-- Fixed sidebar or floating launcher
+- Arabic/English UI and RTL/LTR layout
+- Text sizing and spacing, high contrast, grayscale, link highlighting, reading guide
+- Browser-dependent speech synthesis for page or selected text
+- Closed-caption preferences, transcript viewer, visual notifications
+- Integration hooks for live captions, sign-language videos, and text-based communication
+- Floating launcher or fixed sidebar placement; responsive controls
 
-Caption tracks, live speech transcription, sign-language interpretation and screen-reader compatibility depend on media, service integrations, and host website support.
+Features requiring external resources **do not automatically produce** captions, sign-language interpretation, or speech transcription. The website owner must supply accurate content/services. Browser voices and screen-reader behavior vary by environment.
 
-## Analytics and privacy
+## Privacy and analytics
 
-No telemetry is enabled by default. GitHub repository visits are **not** widget-installation metrics. Aggregate cross-site usage reporting requires a separate, consent-aware backend with privacy and security review. Do not transmit selected text, form content, transcripts, or personal data.
+Tracking is **disabled by default**. GitHub traffic is not a count of installations or active users. An optional aggregate usage backend requires separate deployment, consent/privacy review, and security controls. Never transmit visitor selections, spoken text, transcripts, form contents, or personal information.
 
-## Verification
+## Accessibility verification
 
-The redesigned website passed 36 targeted Chromium checks across desktop, tablet and mobile widths in an in-memory environment. This is **not** a comprehensive accessibility audit or a production deployment test.
+Browser interaction checks are not a complete WCAG audit. Perform manual keyboard, screen-reader, color-contrast, device, and website integration testing before claiming conformance. See [WCAG 2.2](https://www.w3.org/TR/WCAG22/).
 
 ## License
 
-[MIT](./LICENSE).
+MIT — see [LICENSE](./LICENSE). Copyright attribution retains the original project history.
+
+## Brand history
+
+Previously published as **Accessible Visitor Toolkit (AVT)**; renamed to **Able** in November 2026. The GitHub repository name and widget file path remain unchanged to avoid breaking existing links.
