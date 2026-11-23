@@ -103,7 +103,7 @@ html[data-site-theme="dark"] .preview-card,html[data-site-theme="dark"] .mini-si
  document.documentElement.setAttribute('data-site-theme',theme);
  const ar=document.documentElement.lang==='ar';
  b.textContent=theme==='dark'?(ar?'الوضع الفاتح':'Light mode'):(ar?'الوضع الداكن':'Dark mode');
- b.setAttribute('aria-label',theme==='dark'?'Switch to light mode':'Switch to dark mode');
+ b.setAttribute('aria-label',theme==='dark'?(ar?'التبديل إلى الوضع الفاتح':'Switch to light mode'):(ar?'التبديل إلى الوضع الداكن':'Switch to dark mode'));
  b.setAttribute('aria-pressed',String(theme==='dark'));
  const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=theme==='dark'?'#0b172b':'#f5f9fc';
  }
