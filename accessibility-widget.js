@@ -1,4 +1,4 @@
-/* Accessible Visitor Toolkit 1.6.0 | MIT | No external dependencies */
+/* Able Accessibility Widget 1.7.0 | MIT | No external dependencies */
 (() => {
   'use strict';
   if (window.AccessibleVisitorToolkit) return;
@@ -390,5 +390,7 @@
   document.addEventListener('avt:live-caption',e=>pushLiveCaption(e.detail?.text,e.detail?.lang));
   // Synchronize freshly added HTML media (e.g., single-page apps) when opening settings.
   dialog.addEventListener('close',()=>{syncCaptionTracks();});
-  window.AccessibleVisitorToolkit={version:'1.6.0',open,close,setMode,setSide,reset:()=>{stopSpeech();settings={...defaults};update();},readPage:()=>startSpeech(readableBlocks()),stopReading:stopSpeech,notifyVisual,pushLiveCaption,configure:(options={})=>{for(const k of ['contactUrl','signVideoUrl'])if(typeof options[k]==='string')configuration[k]=options[k];refreshHearing();},refreshMedia:()=>{syncCaptionTracks();renderMedia();},getSettings:()=>({...settings})};
+  window.AccessibleVisitorToolkit={version:'1.7.0',open,close,setMode,setSide,reset:()=>{stopSpeech();settings={...defaults};update();},readPage:()=>startSpeech(readableBlocks()),stopReading:stopSpeech,notifyVisual,pushLiveCaption,configure:(options={})=>{for(const k of ['contactUrl','signVideoUrl'])if(typeof options[k]==='string')configuration[k]=options[k];refreshHearing();},refreshMedia:()=>{syncCaptionTracks();renderMedia();},getSettings:()=>({...settings})};
+  // Public Able alias; preserve the original API for existing installations.
+  window.AbleWidget = window.AccessibleVisitorToolkit;
 })();
